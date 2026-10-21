@@ -1,0 +1,411 @@
+/* tema papel: paper.jpg no fundo + cores de caneta */
+.root {
+    -ink: #2b2620;
+    -ink-soft: #4a4238;
+    -pencil: #7a7064;
+    -pen-blue: #1f3f8a;
+    -pen-red: #a62a22;
+    -pen-green: #2f6b35;
+    -highlighter: rgba(255, 224, 70, 0.62);
+    -rule-blue: rgba(66, 110, 185, 0.30);
+    -margin-red: rgba(196, 58, 58, 0.55);
+
+    -fx-font-family: "Georgia";
+    -fx-font-size: 14px;
+
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* .label precisa vir antes, senão sobrescreve as cores dos títulos */
+.label {
+    -fx-text-fill: -ink-soft;
+}
+
+/* layout */
+.app-background {
+    -fx-background-color: #ece6d8;
+    -fx-background-image: url("paper.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+.content {
+    -fx-padding: 30px 34px 30px 34px;
+}
+
+.page-title {
+    -fx-text-fill: -ink;
+    -fx-font-size: 31px;
+    -fx-font-weight: bold;
+}
+
+.page-subtitle {
+    -fx-text-fill: -pencil;
+    -fx-font-size: 13.5px;
+    -fx-font-style: italic;
+}
+
+.page-subtitle.warning-text {
+    -fx-text-fill: #9a4a00;
+}
+
+.section-title {
+    -fx-text-fill: -ink;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.section-subtitle {
+    -fx-text-fill: -pencil;
+    -fx-font-size: 13px;
+    -fx-font-style: italic;
+}
+
+.field-label {
+    -fx-text-fill: -ink-soft;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* cards: translúcidos pra textura do papel aparecer por baixo */
+.sheet {
+    -fx-background-color: rgba(253, 251, 245, 0.66);
+    -fx-background-radius: 2px;
+    -fx-border-color: rgba(60, 52, 40, 0.30);
+    -fx-border-radius: 2px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(70, 55, 30, 0.16), 6, 0, 1, 2);
+    -fx-padding: 22px;
+}
+
+.form-card.editing {
+    -fx-border-color: -pen-blue;
+    -fx-border-width: 1.5px;
+}
+
+.count-badge {
+    -fx-background-color: transparent;
+    -fx-border-color: -pen-blue;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 3px;
+    -fx-padding: 2px 9px;
+    -fx-text-fill: -pen-blue;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+    -fx-rotate: -3;
+    -fx-opacity: 0.88;
+}
+
+.stat-badge {
+    -fx-text-fill: -pencil;
+    -fx-font-size: 13px;
+    -fx-font-style: italic;
+    -fx-padding: 0 4px;
+}
+
+.edit-badge {
+    -fx-background-color: -highlighter;
+    -fx-background-radius: 1px;
+    -fx-padding: 1px 7px;
+    -fx-text-fill: -ink;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-rotate: -2;
+}
+
+/* inputs */
+.text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.40);
+    -fx-background-radius: 0;
+    -fx-border-color: transparent transparent rgba(43, 38, 32, 0.55) transparent;
+    -fx-border-width: 0 0 1.5px 0;
+    -fx-border-radius: 0;
+    -fx-padding: 9px 6px 7px 6px;
+    -fx-prompt-text-fill: #a39a8c;
+    -fx-text-fill: -ink;
+    -fx-highlight-fill: -highlighter;
+    -fx-highlight-text-fill: -ink;
+}
+
+.text-field:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.65);
+    -fx-border-color: transparent transparent -pen-blue transparent;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.search-field {
+    -fx-padding: 9px 6px 7px 32px;
+}
+
+.search-icon {
+    -fx-fill: -pencil;
+}
+
+.text-field.invalid,
+.text-field.invalid:focused {
+    -fx-background-color: rgba(166, 42, 34, 0.06);
+    -fx-border-color: transparent transparent -pen-red transparent;
+    -fx-border-width: 0 0 2px 0;
+}
+
+/* botões */
+.action-button {
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-border-width: 1.5px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-font-size: 13.5px;
+    -fx-padding: 8px 16px;
+}
+
+.action-button:focused {
+    -fx-underline: true;
+}
+
+.action-button:pressed {
+    -fx-translate-y: 1;
+}
+
+.action-button:disabled {
+    -fx-cursor: default;
+    -fx-opacity: 0.38;
+}
+
+.primary-button {
+    -fx-background-color: -pen-blue;
+    -fx-border-color: -pen-blue;
+    -fx-text-fill: #fbf8f0;
+}
+
+.primary-button:hover {
+    -fx-background-color: #183270;
+    -fx-border-color: #183270;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(43, 38, 32, 0.75);
+    -fx-text-fill: -ink;
+}
+
+.secondary-button:hover {
+    -fx-background-color: rgba(43, 38, 32, 0.07);
+}
+
+.danger-button {
+    -fx-background-color: transparent;
+    -fx-border-color: -pen-red;
+    -fx-text-fill: -pen-red;
+}
+
+.danger-button:hover {
+    -fx-background-color: rgba(166, 42, 34, 0.08);
+}
+
+.ghost-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -pencil;
+}
+
+.ghost-button:hover {
+    -fx-text-fill: -ink;
+    -fx-underline: true;
+}
+
+/* feedback e estado vazio */
+.feedback {
+    -fx-font-size: 13.5px;
+    -fx-font-style: italic;
+}
+
+.feedback-success {
+    -fx-text-fill: -pen-green;
+}
+
+.feedback-error {
+    -fx-text-fill: -pen-red;
+}
+
+.placeholder-icon {
+    -fx-fill: rgba(43, 38, 32, 0.30);
+}
+
+.placeholder-title {
+    -fx-text-fill: -ink-soft;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 6px 0 0 0;
+}
+
+.placeholder-text {
+    -fx-text-fill: -pencil;
+    -fx-font-size: 13px;
+    -fx-font-style: italic;
+}
+
+/* tabela */
+.people-table {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.people-table .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.people-table .column-header,
+.people-table .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(43, 38, 32, 0.65) transparent;
+    -fx-border-width: 0 0 1.5px 0;
+    -fx-size: 38px;
+    -fx-padding: 0 12px;
+}
+
+.people-table .column-header .label {
+    -fx-alignment: center-left;
+    -fx-text-fill: -ink-soft;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+}
+
+.people-table .column-header .arrow,
+.people-table .column-header .sort-order-dot {
+    -fx-background-color: -ink-soft;
+}
+
+/* margem vermelha no header também */
+.people-table .column-header.index-column {
+    -fx-border-color: transparent -margin-red rgba(43, 38, 32, 0.65) transparent;
+    -fx-border-width: 0 1.5px 1.5px 0;
+}
+
+/* pauta = border-bottom, igual em toda linha pra nada deslocar */
+.people-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-cell-size: 48px;
+    -fx-border-color: transparent transparent -rule-blue transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+/* :filled pra não destacar as linhas vazias */
+.people-table .table-row-cell:filled:hover {
+    -fx-background-color: rgba(60, 50, 30, 0.05);
+}
+
+.people-table .table-row-cell:selected {
+    -fx-background-color: -highlighter;
+}
+
+.people-table .table-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0 12px;
+    -fx-alignment: center-left;
+    -fx-text-fill: -ink;
+    -fx-font-size: 14px;
+}
+
+.people-table .index-cell {
+    -fx-text-fill: -pencil;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent -margin-red transparent transparent;
+    -fx-border-width: 0 1.5px 0 0;
+}
+
+.people-table .table-row-cell:selected .table-cell {
+    -fx-text-fill: -ink;
+}
+
+.people-table .table-row-cell:selected .index-cell {
+    -fx-text-fill: -pen-blue;
+    -fx-font-weight: bold;
+}
+
+.people-table .name-text {
+    -fx-text-fill: -ink;
+    -fx-font-size: 14px;
+}
+
+.avatar-text {
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+/* scrollbar */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 9px;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 9px;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(43, 38, 32, 0.25);
+    -fx-background-radius: 4px;
+    -fx-background-insets: 2;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(43, 38, 32, 0.42);
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar > .increment-button > .increment-arrow,
+.scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+/* diálogos e tooltip */
+.app-dialog {
+    -fx-background-color: #f8f4ea;
+    -fx-border-color: rgba(60, 52, 40, 0.40);
+    -fx-border-width: 1px;
+    -fx-padding: 6px;
+}
+
+.app-dialog > .content.label {
+    -fx-text-fill: -ink;
+    -fx-font-size: 14.5px;
+    -fx-padding: 14px 18px 8px 18px;
+}
+
+.app-dialog > .button-bar > .container {
+    -fx-background-color: transparent;
+}
+
+/* cor fixa: a tooltip abre em outra janela e não enxerga as variáveis do .root */
+.tooltip {
+    -fx-background-color: #fdfbf4;
+    -fx-background-radius: 1px;
+    -fx-border-color: rgba(60, 52, 40, 0.40);
+    -fx-border-radius: 1px;
+    -fx-padding: 5px 9px;
+    -fx-text-fill: #2b2620;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 12.5px;
+    -fx-font-style: italic;
+    -fx-effect: dropshadow(gaussian, rgba(70, 55, 30, 0.22), 6, 0, 1, 2);
+}
